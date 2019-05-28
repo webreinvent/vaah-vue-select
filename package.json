@@ -1,34 +1,31 @@
 {
   "name": "vaah-vue-select",
   "version": "1.0.0",
-  "description": "Simple Select Vue Component",
-  "main": "dist/my-component.umd.js",
-  "module": "dist/my-component.esm.js",
-  "unpkg": "dist/my-component.min.js",
-  "browser": {
-    "./sfc": "src/VaahVueSelect.vue"
-  },
-  "scripts": {
-    "build": "npm run build:umd & npm run build:es & npm run build:unpkg",
-    "build:umd": "rollup --config build/rollup.config.js --format umd --file dist/my-component.umd.js",
-    "build:es": "rollup --config build/rollup.config.js --format es --file dist/my-component.esm.js",
-    "build:unpkg": "rollup --config build/rollup.config.js --format iife --file dist/my-component.min.js"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/webreinvent/vaah-vue-select.git"
-  },
-  "keywords": [
-    "VueJs",
-    "Vue",
-    "Select",
-    "Option",
-    "Dropdown"
+  "description": "",
+  "main": "dist/VaahVueSelect.ssr.js",
+  "module": "dist/VaahVueSelect.esm.js",
+  "unpkg": "dist/VaahVueSelect.min.js",
+  "files": [
+    "dist/*",
+    "src/**/*.vue"
   ],
-  "author": "WebReinvent",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/webreinvent/vaah-vue-select/issues"
+  "scripts": {
+    "build": "cross-env NODE_ENV=production rollup --config build/rollup.config.js",
+    "build:ssr": "cross-env NODE_ENV=production rollup --config build/rollup.config.js --format cjs",
+    "build:es": "cross-env NODE_ENV=production rollup --config build/rollup.config.js --format es",
+    "build:unpkg": "cross-env NODE_ENV=production rollup --config build/rollup.config.js --format iife"
   },
-  "homepage": "https://github.com/webreinvent/vaah-vue-select#readme"
+  "dependencies": {},
+  "devDependencies": {
+    "cross-env": "^5.2.0",
+    "minimist": "^1.2.0",
+    "rollup": "^1.12.1",
+    "rollup-plugin-buble": "^0.19.6",
+    "rollup-plugin-commonjs": "^10.0.0",
+    "rollup-plugin-replace": "^2.2.0",
+    "rollup-plugin-terser": "^4.0.4",
+    "rollup-plugin-vue": "^5.0.0",
+    "vue": "^2.6.10",
+    "vue-template-compiler": "^2.6.10"
+  }
 }

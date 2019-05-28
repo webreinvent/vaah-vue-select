@@ -1,18 +1,7 @@
-<template>
-    <div class="vaah-vue-select" v-if="options">
-
-        <select v-model="value" v-bind:class="classes">
-
-            <option value="">{{default_text}}</option>
-            <option v-for="option in options" v-bind:value="option[option_key]">{{option[option_value]}}</option>
-
-        </select>
-
-    </div>
-</template>
-
 <script>
+
     export default {
+        name: 'VaahVueSelect',
         props:{
             options:{
                 type: Array,
@@ -47,3 +36,17 @@
 
     }
 </script>
+
+<template>
+    <div class="vaah-vue-select" v-if="options">
+
+        <select v-model="value" v-bind:class="classes">
+
+            <option value="">{{default_text}}</option>
+            <option v-for="option in options" v-bind:value="option[option_key]">{{option[option_value]}}</option>
+
+        </select>
+
+    </div>
+</template>
+

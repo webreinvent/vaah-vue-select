@@ -46,7 +46,7 @@
         },
         methods: {
             sendSelectedValue: function () {
-                this.$emit('on-select', this.vh_selected);
+                this.$emit('input', this.vh_selected);
             },
         }
 

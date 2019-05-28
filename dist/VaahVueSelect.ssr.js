@@ -44,7 +44,7 @@
     },
     methods: {
         sendSelectedValue: function () {
-            this.$emit('on-select', this.vh_selected);
+            this.$emit('input', this.vh_selected);
         },
     }
 
@@ -143,7 +143,7 @@ var __vue_staticRenderFns__ = [];
   /* scoped */
   var __vue_scope_id__ = undefined;
   /* module identifier */
-  var __vue_module_identifier__ = "data-v-368f6d18";
+  var __vue_module_identifier__ = "data-v-41ca0e38";
   /* functional template */
   var __vue_is_functional_template__ = false;
   /* style inject */

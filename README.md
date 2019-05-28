@@ -26,7 +26,7 @@ You can pass following properties to the vue components:
 
 ```html
 <vh-select v-model="selected_value" :options="[]" select_class="form-control" option_value="" option_text="" 
-default_text="Select option" v-on:on-select="callBackMethod"></vh-select>
+default_text="Select option"></vh-select>
 ```
 
 Explanation
@@ -35,7 +35,6 @@ Explanation
 - `select_class`: Class attribute value of the select tag
 - `option_key`: Key name of the array which will set the `value` attribute of the option
 - `option_text`: Key name of the array which will set the text of the option
-- `on-select`: You can listen to this event and call back your method which will have the selected value
 
 Example 1:
 ```js
@@ -59,13 +58,6 @@ data()
         };
 
         return obj;
-    },
-    methods: {
-        getSelectedValue: function (data) {
-
-            console.log("emitted value", data);
-
-        }
     }
     
 ...
@@ -75,7 +67,7 @@ data()
 To create a select dropdown we'll pass the following value:
 ```html
 <vh-select :value="selected_value" :options="options" option_key="code" option_value="name" 
-default_text="Select Country" v-on:on-select="getSelectedValue"></vh-select>
+default_text="Select Country"></vh-select>
 ```
 
 Example 2:

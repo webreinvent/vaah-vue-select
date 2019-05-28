@@ -10,26 +10,42 @@
         value:{
             default: ""
         },
-        classes:{
-            default: "form-control"
-        },
-        option_key:{
-            default: 'id'
-        },
         option_value:{
-            default: 'name'
+            type: String,
+            default: null
         },
-        default_text: {
+        option_text:{
+            type: String,
+            default: null
+        },
+        default_text:{
+            type: String,
             default: "Select Option"
+        },
+        select_class:{
+            type: String,
+            default: "form-control"
         }
     },
     data: function data () {
 
         var obj = {
 
+            vh_options: this.options,
+            vh_selected: this.value,
+            vh_option_value: this.option_value,
+            vh_option_text: this.option_text,
+            vh_default_text: this.default_text,
+            vh_class: this.select_class,
+
         };
 
         return obj
+    },
+    methods: {
+        sendSelectedValue: function () {
+            this.$emit('on-select', this.vh_selected);
+        },
     }
 
 };function normalizeComponent(template, style, script, scopeId, isFunctionalTemplate, moduleIdentifier
@@ -119,7 +135,7 @@ var normalizeComponent_1 = normalizeComponent;/* script */
 var __vue_script__ = script;
 
 /* template */
-var __vue_render__ = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return (_vm.options)?_c('div',{staticClass:"vaah-vue-select"},[_c('select',{directives:[{name:"model",rawName:"v-model",value:(_vm.value),expression:"value"}],class:_vm.classes,on:{"change":function($event){var $$selectedVal = Array.prototype.filter.call($event.target.options,function(o){return o.selected}).map(function(o){var val = "_value" in o ? o._value : o.value;return val}); _vm.value=$event.target.multiple ? $$selectedVal : $$selectedVal[0];}}},[_c('option',{attrs:{"value":""}},[_vm._v(_vm._s(_vm.default_text))]),_vm._v(" "),_vm._l((_vm.options),function(option){return _c('option',{domProps:{"value":option[_vm.option_key]}},[_vm._v(_vm._s(option[_vm.option_value]))])})],2)]):_vm._e()};
+var __vue_render__ = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return (_vm.vh_options)?_c('div',{staticClass:"vaah-vue-select"},[_vm._ssrNode(_vm._ssrEscape("\n\n\n    "+_vm._s(_vm.vh_selected)+"\n\n    ")),_c('select',{directives:[{name:"model",rawName:"v-model",value:(_vm.vh_selected),expression:"vh_selected"}],class:_vm.vh_class,attrs:{"input":_vm.sendSelectedValue()},on:{"change":function($event){var $$selectedVal = Array.prototype.filter.call($event.target.options,function(o){return o.selected}).map(function(o){var val = "_value" in o ? o._value : o.value;return val}); _vm.vh_selected=$event.target.multiple ? $$selectedVal : $$selectedVal[0];}}},[_c('option',{attrs:{"value":""}},[_vm._v(_vm._s(_vm.vh_default_text))]),_vm._v(" "),_vm._l((_vm.vh_options),function(option){return (_vm.vh_option_value)?_c('option',{domProps:{"value":option[_vm.vh_option_value]}},[_vm._v(_vm._s(option[_vm.vh_option_text]))]):_vm._l((_vm.vh_options),function(option){return _c('option',[_vm._v(_vm._s(option))])})})],2)],2):_vm._e()};
 var __vue_staticRenderFns__ = [];
 
   /* style */
@@ -127,7 +143,7 @@ var __vue_staticRenderFns__ = [];
   /* scoped */
   var __vue_scope_id__ = undefined;
   /* module identifier */
-  var __vue_module_identifier__ = "data-v-4e30130a";
+  var __vue_module_identifier__ = "data-v-5def3f26";
   /* functional template */
   var __vue_is_functional_template__ = false;
   /* style inject */

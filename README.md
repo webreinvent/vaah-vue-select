@@ -25,32 +25,62 @@ Vue.component('vh-select', vhSelect)
 You can pass following properties to the vue components:
 
 ```sh
-<vh-select :value="" :options="[]" :classes="'form-control'" 
-:option_key="'array_key'" :option_value="'array_value'"
-:default_text="'Select option'"
+<vh-select v-model="selected_value" :options="[]" select_class="form-control" 
+option_value="" option_text=""
+v-on:on-select="callBackMethod"
+default_text="Select option"
  ></vh-select>
 ```
 
+Explanation
+- `v-model`: It is the selected value
+- `:options`: An array of values to render options of the select tag
+- `select_class`: Class attribute value of the select tag
+- `option_key`: Key name of the array which will set the `value` attribute of the option
+- `option_text`: Key name of the array which will set the text of the option
+- `on-select`: You can listen to this event and call back your method which will have the selected value
+
 Example 1:
 ```js
-let options = [
-    {
-        country_code: 'IN',
-        country_name: 'India',
-    },
-    {
-        country_code: 'US',
-        country_name: 'United States',
-    }
-];
+...
 
-let selected_value = "IN";
+data()
+    {
+        let obj = {
+            //options: ['IN', 'US'],
+            options: [
+                {
+                    code: "IN",
+                    name: "India",
+                },
+                {
+                    code: "US",
+                    name: "United States",
+                }
+            ],
+            selected_val: 'US',
+        };
+
+        return obj;
+    },
+    methods: {
+        getSelectedValue: function (data) {
+
+            console.log("emitted value", data);
+
+        }
+    }
+    
+...
 
 ```
 
 To create a select dropdown we'll pass the following value:
 ```sh
-<vh-select :value="selected_value" :options="options" :option_key="'country_code'" :option_value="'country_name'" :default_text="'Select Country'"></vh-select>
+<vh-select :value="selected_value" :options="options" 
+option_key="code" option_value="name" 
+v-on:on-select="getSelectedValue"
+default_text="Select Country"></vh-select>
 ```
 
 Example 2:
@@ -72,7 +102,22 @@ let selected_id = 1;
 
 To create a select dropdown we'll pass the following value:
 ```sh
-<vh-select :value="selected_id" :options="options" :default_text="'Select Country'"></vh-select>
+<vh-select :value="selected_id" :options="options"
+option_value="id" option_text="name" 
+default_text="Select Country"></vh-select>
+```
+
+Example 2:
+```js
+let options = ["Apple", "Orange"];
+
+let selected = "Orange";
+
+```
+
+To create a select dropdown we'll pass the following value:
+```sh
+<vh-select :value="selected" :options="options" default_text="Select Fruit"></vh-select>
 ```
 
 ## Support us

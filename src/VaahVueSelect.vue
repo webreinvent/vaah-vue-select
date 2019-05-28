@@ -12,39 +12,60 @@
             value:{
                 default: ""
             },
-            classes:{
-                default: "form-control"
-            },
-            option_key:{
-                default: 'id'
-            },
             option_value:{
-                default: 'name'
+                type: String,
+                default: null
             },
-            default_text: {
+            option_text:{
+                type: String,
+                default: null
+            },
+            default_text:{
+                type: String,
                 default: "Select Option"
+            },
+            select_class:{
+                type: String,
+                default: "form-control"
             }
         },
         data () {
 
             let obj = {
 
+                vh_options: this.options,
+                vh_selected: this.value,
+                vh_option_value: this.option_value,
+                vh_option_text: this.option_text,
+                vh_default_text: this.default_text,
+                vh_class: this.select_class,
+
             };
 
             return obj
+        },
+        methods: {
+            sendSelectedValue: function () {
+                this.$emit('on-select', this.vh_selected);
+            },
         }
 
     }
 </script>
 
 <template>
-    <div class="vaah-vue-select" v-if="options">
+    <div class="vaah-vue-select" v-if="vh_options">
 
-        <select v-model="value" v-bind:class="classes">
 
-            <option value="">{{default_text}}</option>
-            <option v-for="option in options" v-bind:value="option[option_key]">{{option[option_value]}}</option>
+        {{vh_selected}}
 
+        <select v-model="vh_selected" :input="sendSelectedValue()" :class="vh_class" >
+            <option value="">{{vh_default_text}}</option>
+
+            <option v-if="vh_option_value" v-for="option in vh_options"
+                    :value="option[vh_option_value]">{{option[vh_option_text]}}</option>
+
+            <option v-else v-for="option in vh_options" >{{option}}</option>
         </select>
 
     </div>

@@ -24,12 +24,9 @@ Vue.component('vh-select', vhSelect)
 
 You can pass following properties to the vue components:
 
-```sh
-<vh-select v-model="selected_value" :options="[]" select_class="form-control" 
-option_value="" option_text=""
-v-on:on-select="callBackMethod"
-default_text="Select option"
- ></vh-select>
+```html
+<vh-select v-model="selected_value" :options="[]" select_class="form-control" option_value="" option_text="" 
+default_text="Select option" v-on:on-select="callBackMethod"></vh-select>
 ```
 
 Explanation
@@ -76,11 +73,9 @@ data()
 ```
 
 To create a select dropdown we'll pass the following value:
-```sh
-<vh-select :value="selected_value" :options="options" 
-option_key="code" option_value="name" 
-v-on:on-select="getSelectedValue"
-default_text="Select Country"></vh-select>
+```html
+<vh-select :value="selected_value" :options="options" option_key="code" option_value="name" 
+default_text="Select Country" v-on:on-select="getSelectedValue"></vh-select>
 ```
 
 Example 2:
@@ -101,9 +96,8 @@ let selected_id = 1;
 ```
 
 To create a select dropdown we'll pass the following value:
-```sh
-<vh-select :value="selected_id" :options="options"
-option_value="id" option_text="name" 
+```html
+<vh-select :value="selected_id" :options="options" option_value="id" option_text="name" 
 default_text="Select Country"></vh-select>
 ```
 
@@ -116,7 +110,7 @@ let selected = "Orange";
 ```
 
 To create a select dropdown we'll pass the following value:
-```sh
+```html
 <vh-select :value="selected" :options="options" default_text="Select Fruit"></vh-select>
 ```
 

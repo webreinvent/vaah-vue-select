@@ -16,7 +16,7 @@
                 default: "form-control"
             },
             option_key:{
-                default: 'slug'
+                default: 'id'
             },
             option_value:{
                 default: 'name'

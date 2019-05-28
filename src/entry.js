@@ -5,7 +5,7 @@ import component from './VaahVueSelect.vue';
 function install(Vue) {
   if (install.installed) return;
   install.installed = true;
-  Vue.component('vh-select', component);
+  Vue.component('vaah-vue-select', component);
 }
 
 // Create module definition for Vue.use()

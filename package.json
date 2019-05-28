@@ -1,7 +1,8 @@
 {
   "name": "vaah-vue-select",
-  "version": "1.0.0",
-  "description": "",
+  "version": "1.0.2",
+  "description": "A simple native Vue.js component for Select html tag",
+  "repository": "git@github.com:webreinvent/vaah-vue-select.git",
   "main": "dist/VaahVueSelect.ssr.js",
   "module": "dist/VaahVueSelect.esm.js",
   "unpkg": "dist/VaahVueSelect.min.js",

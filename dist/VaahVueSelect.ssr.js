@@ -135,7 +135,7 @@ var normalizeComponent_1 = normalizeComponent;/* script */
 var __vue_script__ = script;
 
 /* template */
-var __vue_render__ = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return (_vm.vh_options)?_c('div',{staticClass:"vaah-vue-select"},[_vm._ssrNode(_vm._ssrEscape("\n\n\n    "+_vm._s(_vm.vh_selected)+"\n\n    ")),_c('select',{directives:[{name:"model",rawName:"v-model",value:(_vm.vh_selected),expression:"vh_selected"}],class:_vm.vh_class,attrs:{"input":_vm.sendSelectedValue()},on:{"change":function($event){var $$selectedVal = Array.prototype.filter.call($event.target.options,function(o){return o.selected}).map(function(o){var val = "_value" in o ? o._value : o.value;return val}); _vm.vh_selected=$event.target.multiple ? $$selectedVal : $$selectedVal[0];}}},[_c('option',{attrs:{"value":""}},[_vm._v(_vm._s(_vm.vh_default_text))]),_vm._v(" "),_vm._l((_vm.vh_options),function(option){return (_vm.vh_option_value)?_c('option',{domProps:{"value":option[_vm.vh_option_value]}},[_vm._v(_vm._s(option[_vm.vh_option_text]))]):_vm._l((_vm.vh_options),function(option){return _c('option',[_vm._v(_vm._s(option))])})})],2)],2):_vm._e()};
+var __vue_render__ = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return (_vm.vh_options)?_c('div',{staticClass:"vaah-vue-select"},[_c('select',{directives:[{name:"model",rawName:"v-model",value:(_vm.vh_selected),expression:"vh_selected"}],class:_vm.vh_class,attrs:{"input":_vm.sendSelectedValue()},domProps:{"value":_vm.vh_selected},on:{"change":function($event){var $$selectedVal = Array.prototype.filter.call($event.target.options,function(o){return o.selected}).map(function(o){var val = "_value" in o ? o._value : o.value;return val}); _vm.vh_selected=$event.target.multiple ? $$selectedVal : $$selectedVal[0];}}},[_c('option',{attrs:{"value":""}},[_vm._v(_vm._s(_vm.vh_default_text))]),_vm._v(" "),_vm._l((_vm.vh_options),function(option){return (_vm.vh_option_value)?_c('option',{domProps:{"value":option[_vm.vh_option_value]}},[_vm._v(_vm._s(option[_vm.vh_option_text]))]):_vm._l((_vm.vh_options),function(option){return _c('option',[_vm._v(_vm._s(option))])})})],2)]):_vm._e()};
 var __vue_staticRenderFns__ = [];
 
   /* style */
@@ -143,7 +143,7 @@ var __vue_staticRenderFns__ = [];
   /* scoped */
   var __vue_scope_id__ = undefined;
   /* module identifier */
-  var __vue_module_identifier__ = "data-v-5def3f26";
+  var __vue_module_identifier__ = "data-v-368f6d18";
   /* functional template */
   var __vue_is_functional_template__ = false;
   /* style inject */

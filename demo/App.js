@@ -9,7 +9,8 @@ export default {
       <vh-select :options="options" v-model="selected_val"
       option_value="code" 
       option_text="name"
-      v-on:on-select="getSelectedValue"
+      
+      v-on:change="getSelectedValue"
       ></vh-select>
       
       Selected Value: {{selected_val}}

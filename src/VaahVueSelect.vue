@@ -47,6 +47,7 @@
         methods: {
             sendSelectedValue: function () {
                 this.$emit('input', this.vh_selected);
+                this.$emit('change', this.vh_selected);
             },
         }
 
@@ -56,7 +57,9 @@
 <template>
     <div class="vaah-vue-select" v-if="vh_options">
 
-        <select v-model="vh_selected" v-bind:value="vh_selected" :input="sendSelectedValue()" :class="vh_class" >
+        <select v-model="vh_selected" v-bind:value="vh_selected" :input="sendSelectedValue()"
+                :change="sendSelectedValue()"
+                :class="vh_class" >
             <option value="">{{vh_default_text}}</option>
 
             <option v-if="vh_option_value" v-for="option in vh_options"

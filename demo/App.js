@@ -34,7 +34,7 @@ export default {
                     name: "United States",
                 }
             ],
-            selected_val: 'US',
+            selected_val: null,
         };
 
         return obj;

@@ -5,12 +5,10 @@
         props:{
             options:{
                 type: Array,
-                default() {
-                    return []
-                },
+                default: null,
             },
             value:{
-                default: ""
+                default: null
             },
             option_value:{
                 type: String,
@@ -44,7 +42,17 @@
 
             return obj
         },
+        created () {
+            this.setToStrings()
+        },
         methods: {
+            setToStrings () {
+                // Simply replaces null values with strings=''
+                if (this.vh_selected === null) {
+                    this.vh_selected = ''
+                }
+                return this.vh_selected;
+            },
             sendSelectedValue: function () {
                 this.$emit('input', this.vh_selected);
                 this.$emit('change', this.vh_selected);
@@ -60,7 +68,8 @@
         <select v-model="vh_selected" v-bind:value="vh_selected" :input="sendSelectedValue()"
                 :change="sendSelectedValue()"
                 :class="vh_class" >
-            <option value="">{{vh_default_text}}</option>
+
+            <option disabled value="" >{{vh_default_text}}</option>
 
             <option v-if="vh_option_value" v-for="option in vh_options"
                     :value="option[vh_option_value]">{{option[vh_option_text]}}</option>

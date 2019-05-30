@@ -3,12 +3,10 @@
     props:{
         options:{
             type: Array,
-            default: function default$1() {
-                return []
-            },
+            default: null,
         },
         value:{
-            default: ""
+            default: null
         },
         option_value:{
             type: String,
@@ -42,7 +40,17 @@
 
         return obj
     },
+    created: function created () {
+        this.setToStrings();
+    },
     methods: {
+        setToStrings: function setToStrings () {
+            // Simply replaces null values with strings=''
+            if (this.vh_selected === null) {
+                this.vh_selected = '';
+            }
+            return this.vh_selected;
+        },
         sendSelectedValue: function () {
             this.$emit('input', this.vh_selected);
             this.$emit('change', this.vh_selected);
@@ -144,7 +152,7 @@ var __vue_staticRenderFns__ = [];
   /* scoped */
   var __vue_scope_id__ = undefined;
   /* module identifier */
-  var __vue_module_identifier__ = "data-v-d0cda07e";
+  var __vue_module_identifier__ = "data-v-02036d62";
   /* functional template */
   var __vue_is_functional_template__ = false;
   /* style inject */

@@ -115,5 +115,8 @@ To create a select dropdown we'll pass the following value:
 The MIT License (MIT). Please see [License File](LICENSE) for more information.
 
 #### Credits:
-- To generate vue npm package 
+- To generate vue npm package:
 https://github.com/team-innovation/vue-sfc-rollup
+
+- To check download stats:
+http://npm-stats.org/#/vaah-vue-select

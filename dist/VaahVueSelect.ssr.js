@@ -52,6 +52,7 @@
             return this.vh_selected;
         },
         sendSelectedValue: function () {
+            this.$emit('input', this.vh_selected);
             this.$emit('change', this.vh_selected);
         },
     }
@@ -151,7 +152,7 @@ var __vue_staticRenderFns__ = [];
   /* scoped */
   var __vue_scope_id__ = undefined;
   /* module identifier */
-  var __vue_module_identifier__ = "data-v-198ef54e";
+  var __vue_module_identifier__ = "data-v-1f10f3ba";
   /* functional template */
   var __vue_is_functional_template__ = false;
   /* style inject */

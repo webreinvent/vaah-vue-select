@@ -54,6 +54,7 @@
                 return this.vh_selected;
             },
             sendSelectedValue: function () {
+                this.$emit('input', this.vh_selected);
                 this.$emit('change', this.vh_selected);
             },
         }

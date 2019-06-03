@@ -65,7 +65,7 @@
 <template>
     <div class="vaah-vue-select" v-if="vh_options">
 
-        <select v-model="vh_selected" v-bind:value="vh_selected" :input="sendSelectedValue()"
+        <select v-model="vh_selected" v-bind:value="vh_selected"
                 :change="sendSelectedValue()"
                 :class="vh_class" >
 
